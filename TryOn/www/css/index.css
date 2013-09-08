@@ -45,20 +45,6 @@ body {
     width:100%;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -69,47 +55,66 @@ body {
     }
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+/*css*/
+@font-face {
+  font-family: 'Tequilla_Sunrise';
+  font-style: normal;
+  font-weight: 300;
+   src: url(http://themes.googleusercontent.com/static/fonts/luckiestguy/v3/5718gH8nDy3hFVihOpkY5HhCUOGz7vYGh680lGh-uXM.woff) format('woff');
 }
-
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
+/*general*/
+ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    list-style: none;
 }
-
-.event.listening {
-    background-color:#333333;
-    display:block;
+a{
+    text-decoration: none;
 }
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
+/*pagina1*/
+#pagina1{
+    background: white url() no-repeat center center;
+    background-size: cover;
+    position: fixed;
 }
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.titulo{
+    font-family: "Tequilla_Sunrise" !important;
+    color: rgb(56, 52, 52);
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px -1px 1px rgb(118, 122, 122), 1px 4px 1px rgb(204, 204, 204), 0 1px 1px rgb(0, 0, 1), 2px 5px 1px rgb(11, 12, 12), 3px 4px 2px rgb(255, 255, 255);  
 }
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
+.img_intro{
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    position: absolute;
 }
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+.image1{
+    background: red;
+    margin-left: 50%;
+    padding: 15px;   
+}
+.image2{
+    background: yellow;
+    padding: 15px;   
+}
+.image3{
+    background: green;
+    margin-left: 30%;
+    padding: 5px;   
+}
+.image4{
+    background: blue;
+    margin-left: 10%;
+    padding: 5px;   
+}
+.footer_intro {
+    background: none !important;
+    border: none !important;
+    margin: 0;
+    padding: 0;
 }
