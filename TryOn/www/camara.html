@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ejemplo de Camera</title>
+    <title>Capture Photo</title>
 
-    <script src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-        var pictureSource;   // Origen de la imagen
-        var destinationType; // Formato del valor retornado
+        var pictureSource;   // picture source
+        var destinationType; // sets the format of returned value
 
-        // Espera a que PhoneGap conecte con el dispositivo.
+        // Wait for Cordova to connect with the device
         //
         document.addEventListener("deviceready",onDeviceReady,false);
 
-        // PhoneGap esta listo para usarse!
+        // Cordova is ready to be used!
         //
         function onDeviceReady() {
             pictureSource=navigator.camera.PictureSourceType;
             destinationType=navigator.camera.DestinationType;
         }
 
-        // Llamada cuando la foto se retorna sin problemas
+        // Called when a photo is successfully retrieved
         //
         function onPhotoDataSuccess(imageData) {
-            // Descomenta esta linea para ver la imagen codificada en base64
+            // Uncomment to view the base64 encoded image data
             // console.log(imageData);
 
-            // Obtiene el elemento HTML de la imagen
+            // Get image handle
             //
             var smallImage = document.getElementById('smallImage');
 
-            // Revela el elemento de la imagen
+            // Unhide image elements
             //
             smallImage.style.display = 'block';
 
-            // Muestra la foto capturada
-            // Se usan reglas CSS para dimensionar la imagen
+            // Show the captured photo
+            // The inline CSS rules are used to resize the image
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
         }
 
-        // Llamada cuando la foto se retorna sin problemas
+        // Called when a photo is successfully retrieved
         //
         function onPhotoURISuccess(imageURI) {
-            // Descomenta esta linea para ver la ruta URI al fichero de imagen
+            // Uncomment to view the image file URI
             // console.log(imageURI);
 
-            // Obtiene el elemento HTML de la imagen
+            // Get image handle
             //
             var largeImage = document.getElementById('largeImage');
 
-            // Revela el elemento de la imagen
+            // Unhide image elements
             //
             largeImage.style.display = 'block';
 
-            // Muestra la foto capturada
-            // Se usan reglas CSS para dimensionar la imagen
+            // Show the captured photo
+            // The inline CSS rules are used to resize the image
             //
             largeImage.src = imageURI;
         }
 
-        // Un botÃ³n llamara a esta funciÃ³n
+        // A button will call this function
         //
         function capturePhoto() {
-            // Toma la imagen y la retorna como una string codificada en base64
-            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+            // Take picture using device camera and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+                destinationType: destinationType.DATA_URL });
         }
 
-        // Un botÃ³n llamara a esta funciÃ³n
+        // A button will call this function
         //
         function capturePhotoEdit() {
-            // Toma la imagen, permite editarla y la retorna como una string codificada en base64
-            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true });
+            // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
+                destinationType: destinationType.DATA_URL });
         }
 
-        // Un botÃ³n llamara a esta funciÃ³n
+        // A button will call this function
         //
         function getPhoto(source) {
-            // Retorna la ruta del fichero de imagen desde el origen especificado
+            // Retrieve image file location from specified source
             navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
                 destinationType: destinationType.FILE_URI,
                 sourceType: source });
         }
 
-        // Llamado cuando algo malo ocurre
-        // 
+        // Called if something bad happens.
+        //
         function onFail(message) {
-            alert('OcurriÃ³ un error: ' + message);
+            alert('Failed because: ' + message);
         }
 
     </script>
 </head>
 <body>
-<button onclick="capturePhoto();">Capturar foto</button> <br>
-<button onclick="capturePhotoEdit();">Capturar foto editable</button> <br>
-<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Desde la librerÃ­a de imÃ¡genes</button><br>
-<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">Desde el Ã¡lbum de fotos</button><br>
+<button onclick="capturePhoto();">Capture Photo</button> <br>
+<button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
 <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
 <img style="display:none;" id="largeImage" src="" />
 </body>
