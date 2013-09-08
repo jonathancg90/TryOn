@@ -1,149 +1,260 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <title>Ejemplo de Camera</title>
 
-        <!--mobile-->
-         <link rel="stylesheet" href="js/jquery_mobile/jquery.mobile-1.3.2.min.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">        
-        <link rel="stylesheet" href="css/flat.css">   
-        <link rel="stylesheet" href="css/index.css">     
-       
-        <title>Hello World</title>
-    </head>
-    <body>
-        <!--pagina1-->
-        <div data-role="page" id="pagina1">
-            <div data-role="content">
-                <h1 class="titulo">Try On!</h1>
-                <div class="image1 img_intro"></div>
-                <div class="image2 img_intro"></div>
-                <div class="image3 img_intro"></div>
-                <div class="image4 img_intro"></div> 
-                <div class="image5 img_intro"></div>                
-            </div>
-            <div data-role="footer" data-position="fixed" class="footer_intro">
-                <div class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <a href="#pagina2" data-role="button" data-theme="a">Get Started</a>
-                    </div>
-                    <div class="ui-block-b">
-                        <a href="#pagina2" data-role="button" data-transition="slide" data-theme="b">Sign In</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-       
-       <!--pagina2-->
-       <div data-role="page" id="pagina2">
-            <div data-role="header" data-position="fixed" data-id="head1">
-                <a class="header_top_options" href="#left-panel"><i class="icon-white icon-align-justify"></i></a>
-                <h1>Profile</h1>
-                <a class="header_top_options" href="search.html" data-ajax="false" data-transition="slide"><i class="icon-white icon-search"></i></a>
-            </div>
-            <div data-role="content" class="content_tab">
-                <ul class="personal_info">                    
-                    <li>
-                        <div class="user_photo"></div>
-                    </li>
-                    <li>Name: John Paul</li>
-                    <li>Age: 19 years old</li>
-                    <li>Role: Buyer</li>
-                    <li>Total Budget: <b>$45.50</b></li>
-                    <li>Total buys: 12</li>
-                </ul>
-                <div id="myCarousel" class="carousel slide">
-                  <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                  </ol>
-                  <!-- Carousel items -->
-                  <div class="carousel-inner">
-                    <div class="active item">
-                      <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="" />
-                      <div class="carousel-caption">
-                        <h4>$45.00</h4>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="" />
-                      <div class="carousel-caption">
-                        <h4>$12.56</h4>
-                      </div>
-                    </div>
-                    <div class="item">
-                      <img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="" />
-                      <div class="carousel-caption">
-                        <h4>$8.52</h4>
-                      </div>  
-                    </div>
-                  </div>
-                  <!-- Carousel nav -->
-                  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-                  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-                </div>
-            </div><!-- /content -->
-            <div data-role="panel" id="left-panel" data-theme="a">
-                <ul data-role="listview">
-                    <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
-                    <li data-role="list-divider">Menu</li>
-                    <li data-icon="back"><a href="#pagina1">Log Out</a></li>
-                </ul>        
-            </div><!-- /panel -->
-            <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="a">
-                <ul data-role="listview" data-icon="false">
-                    <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>
-                    <li data-role="list-divider">Share this page</li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Google +</a></li>
-                    <li><a href="#">Mail</a></li>
-                </ul>
-            </div><!-- /panel -->
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
-            <div data-role="footer" data-position="fixed" data-id="foo1">
-                <div class="ui-grid-b">
-                    <div class="ui-block-c">
-                        <a href="#right-panel" data-role="button">
-                            <i class="icon-white icon-user"></i>
-                        </a>
-                    </div>
-                    <div class="ui-block-c">
-                        <a href="camara.html" data-role="button" data-transition="flip">
-                            <i class="icon-white icon-camera"></i>
-                        </a>
-                    </div>
-                    <div class="ui-block-c">
-                        <a href="#pagina3" data-role="button" data-transition="slide">
-                            <i class="icon-white icon-cog"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        var pictureSource;   // Origen de la imagen
+        var destinationType; // Formato del valor retornado
 
-        <script src="js/jquery-1.8.3.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/jquery_mobile/jquery.mobile-1.3.2.min.js"></script>        
-        <script>
-            $(document).on('ready',function(){
-                 /* Starting Animation on Load */
-                $('<img/>').attr('src', 'http://helloworldperu.com/media/slider/1.jpg').load(function() {
-                  $('.titulo').fadeIn(600, function() {
-                    $(this).animate({'font-size':'60px','margin-top': '5%'},400);
-                    $('.image1').animate({opacity: '1','padding':'0','margin': '0 9%','top':'30%',}, 500,function() {
-                      $('.image2').animate({opacity: '1', 'padding': '0','top': '30%','left': '59%'}, 500);
-                      $('.image3').animate({opacity: '1', 'margin':'0','padding': '0','top': '57%','left': '20%'}, 500);
-                      $('.image4').animate({opacity: '1', 'padding': '0','top': '59%','left': '60%'}, 500);
-                      $('.image5').animate({opacity: '1', 'padding': '0','top': '48%','left': '34%'}, 500);
-                    });
-                  });
-                });
-            });
+        // Espera a que PhoneGap conecte con el dispositivo.
+        //
+        document.addEventListener("deviceready",onDeviceReady,false);
 
-        </script>
-    </body>
+        // PhoneGap esta listo para usarse!
+        //
+        function onDeviceReady() {
+            pictureSource=navigator.camera.PictureSourceType;
+            destinationType=navigator.camera.DestinationType;
+        }
+
+        // Llamada cuando la foto se retorna sin problemas
+        //
+        function onPhotoDataSuccess(imageData) {
+            // Descomenta esta linea para ver la imagen codificada en base64
+            // console.log(imageData);
+
+            // Obtiene el elemento HTML de la imagen
+            //
+            var smallImage = document.getElementById('smallImage');
+
+            // Revela el elemento de la imagen
+            //
+            smallImage.style.display = 'block';
+
+            // Muestra la foto capturada
+            // Se usan reglas CSS para dimensionar la imagen
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+        }
+
+        // Llamada cuando la foto se retorna sin problemas
+        //
+        function onPhotoURISuccess(imageURI) {
+            // Descomenta esta linea para ver la ruta URI al fichero de imagen
+            // console.log(imageURI);
+
+            // Obtiene el elemento HTML de la imagen
+            //
+            var largeImage = document.getElementById('largeImage');
+
+            // Revela el elemento de la imagen
+            //
+            largeImage.style.display = 'block';
+
+            // Muestra la foto capturada
+            // Se usan reglas CSS para dimensionar la imagen
+            //
+            largeImage.src = imageURI;
+        }
+
+        // Un botÃ³n llamara a esta funciÃ³n
+        //
+        function capturePhoto() {
+            // Toma la imagen y la retorna como una string codificada en base64
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50 });
+        }
+
+        // Un botÃ³n llamara a esta funciÃ³n
+        //
+        function capturePhotoEdit() {
+            // Toma la imagen, permite editarla y la retorna como una string codificada en base64
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true });
+        }
+
+        // Un botÃ³n llamara a esta funciÃ³n
+        //
+        function getPhoto(source) {
+            // Retorna la ruta del fichero de imagen desde el origen especificado
+            navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                destinationType: destinationType.FILE_URI,
+                sourceType: source });
+        }
+
+        // Llamado cuando algo malo ocurre
+        //
+        function onFail(message) {
+            alert('OcurriÃ³ un error: ' + message);
+        }
+
+    </script>
+</head>
+<body>
+<button onclick="capturePhoto();">Capturar foto</button> <br>
+<button onclick="capturePhotoEdit();">Capturar foto editable</button> <br>
+<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Desde la librerÃ­a de imÃ¡genes</button><br>
+<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">Desde el Ã¡lbum de fotos</button><br>
+<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+<img style="display:none;" id="largeImage" src="" />
+</body>
 </html>
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+    <!--<head>-->
+        <!--<meta charset="utf-8" />-->
+        <!--<meta name="format-detection" content="telephone=no" />-->
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
+
+        <!--&lt;!&ndash;mobile&ndash;&gt;-->
+         <!--<link rel="stylesheet" href="js/jquery_mobile/jquery.mobile-1.3.2.min.css">-->
+        <!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">        -->
+        <!--<link rel="stylesheet" href="css/flat.css">   -->
+        <!--<link rel="stylesheet" href="css/index.css">     -->
+       <!---->
+        <!--<title>Hello World</title>-->
+    <!--</head>-->
+    <!--<body>-->
+        <!--&lt;!&ndash;pagina1&ndash;&gt;-->
+        <!--<div data-role="page" id="pagina1">-->
+            <!--<div data-role="content">-->
+                <!--<h1 class="titulo">Try On!</h1>-->
+                <!--<div class="image1 img_intro"></div>-->
+                <!--<div class="image2 img_intro"></div>-->
+                <!--<div class="image3 img_intro"></div>-->
+                <!--<div class="image4 img_intro"></div> -->
+                <!--<div class="image5 img_intro"></div>                -->
+            <!--</div>-->
+            <!--<div data-role="footer" data-position="fixed" class="footer_intro">-->
+                <!--<div class="ui-grid-a">-->
+                    <!--<div class="ui-block-a">-->
+                        <!--<a href="#pagina2" data-role="button" data-theme="a">Get Started</a>-->
+                    <!--</div>-->
+                    <!--<div class="ui-block-b">-->
+                        <!--<a href="#pagina2" data-role="button" data-transition="slide" data-theme="b">Sign In</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+       <!---->
+       <!--&lt;!&ndash;pagina2&ndash;&gt;-->
+       <!--<div data-role="page" id="pagina2">-->
+            <!--<div data-role="header" data-position="fixed" data-id="head1">-->
+                <!--<a class="header_top_options" href="#left-panel"><i class="icon-white icon-align-justify"></i></a>-->
+                <!--<h1>Profile</h1>-->
+                <!--<a class="header_top_options" href="search.html" data-ajax="false" data-transition="slide"><i class="icon-white icon-search"></i></a>-->
+            <!--</div>-->
+            <!--<div data-role="content" class="content_tab">-->
+                <!--<ul class="personal_info">                    -->
+                    <!--<li>-->
+                        <!--<div class="user_photo"></div>-->
+                    <!--</li>-->
+                    <!--<li>Name: John Paul</li>-->
+                    <!--<li>Age: 19 years old</li>-->
+                    <!--<li>Role: Buyer</li>-->
+                    <!--<li>Total Budget: <b>$45.50</b></li>-->
+                    <!--<li>Total buys: 12</li>-->
+                <!--</ul>-->
+                <!--<div id="myCarousel" class="carousel slide">-->
+                  <!--<ol class="carousel-indicators">-->
+                    <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+                    <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
+                    <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+                  <!--</ol>-->
+                  <!--&lt;!&ndash; Carousel items &ndash;&gt;-->
+                  <!--<div class="carousel-inner">-->
+                    <!--<div class="active item">-->
+                      <!--<img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="" />-->
+                      <!--<div class="carousel-caption">-->
+                        <!--<h4>$45.00</h4>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                      <!--<img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="" />-->
+                      <!--<div class="carousel-caption">-->
+                        <!--<h4>$12.56</h4>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                      <!--<img src="http://getbootstrap.com/2.3.2/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="" />-->
+                      <!--<div class="carousel-caption">-->
+                        <!--<h4>$8.52</h4>-->
+                      <!--</div>  -->
+                    <!--</div>-->
+                  <!--</div>-->
+                  <!--&lt;!&ndash; Carousel nav &ndash;&gt;-->
+                  <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>-->
+                  <!--<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>-->
+                <!--</div>-->
+            <!--</div>&lt;!&ndash; /content &ndash;&gt;-->
+            <!--<div data-role="panel" id="left-panel" data-theme="a">-->
+        <!--        <ul data-role="listview">-->
+        <!--            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>-->
+        <!--            <li data-role="list-divider">Menu</li>-->
+        <!--            <li data-icon="back"><a href="#pagina1">Log Out</a></li>-->
+        <!--        </ul>        -->
+        <!--    </div>&lt;!&ndash; /panel &ndash;&gt;-->
+        <!--    <div data-role="panel" id="right-panel" data-display="overlay" data-position="right" data-theme="a">-->
+        <!--        <ul data-role="listview" data-icon="false">-->
+        <!--            <li data-icon="delete"><a href="#" data-rel="close">Close</a></li>-->
+        <!--            <li data-role="list-divider">Share this page</li>-->
+        <!--            <li><a href="#">Twitter</a></li>-->
+        <!--            <li><a href="#">Facebook</a></li>-->
+        <!--            <li><a href="#">Google +</a></li>-->
+        <!--            <li><a href="#">Mail</a></li>-->
+        <!--        </ul>-->
+        <!--    </div>&lt;!&ndash; /panel &ndash;&gt;-->
+
+            <!--<div data-role="footer" data-position="fixed" data-id="foo1">-->
+                <!--<div class="ui-grid-b">-->
+                    <!--<div class="ui-block-c">-->
+                        <!--<a href="#right-panel" data-role="button">-->
+                            <!--<i class="icon-white icon-user"></i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="ui-block-c">-->
+                        <!--<a href="camara.html" data-role="button" data-transition="flip">-->
+                            <!--<i class="icon-white icon-camera"></i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="ui-block-c">-->
+                        <!--<a href="#pagina3" data-role="button" data-transition="slide">-->
+                            <!--<i class="icon-white icon-cog"></i>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+        <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
+        <!--<script src="js/jquery_mobile/jquery.mobile-1.3.2.min.js"></script>        -->
+        <!--<script>-->
+            <!--$(document).on('ready',function(){-->
+                 <!--/* Starting Animation on Load */-->
+                <!--$('<img/>').attr('src', 'http://helloworldperu.com/media/slider/1.jpg').load(function() {-->
+                  <!--$('.titulo').fadeIn(600, function() {-->
+                    <!--$(this).animate({'font-size':'60px','margin-top': '5%'},400);-->
+                    <!--$('.image1').animate({opacity: '1','padding':'0','margin': '0 9%','top':'30%',}, 500,function() {-->
+                      <!--$('.image2').animate({opacity: '1', 'padding': '0','top': '30%','left': '59%'}, 500);-->
+                      <!--$('.image3').animate({opacity: '1', 'margin':'0','padding': '0','top': '57%','left': '20%'}, 500);-->
+                      <!--$('.image4').animate({opacity: '1', 'padding': '0','top': '59%','left': '60%'}, 500);-->
+                      <!--$('.image5').animate({opacity: '1', 'padding': '0','top': '48%','left': '34%'}, 500);-->
+                    <!--});-->
+                  <!--});-->
+                <!--});-->
+            <!--});-->
+
+        <!--</script>-->
+    <!--</body>-->
+<!--</html>-->
